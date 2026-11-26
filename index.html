@@ -323,7 +323,7 @@ function extra(){
   const x=$('extra');
   if(cat==='money'){
     x.innerHTML=`<h2>המטבעות המועדפים שלי</h2><div class="card"><p class="note">המועדפים מופיעים ראשונים ברשימת הבחירה למעלה. שקל תמיד שם.</p><div class="inl" id="mfav"></div><input id="mq" class="search" placeholder="חפש מטבע להוספה, למשל דונג, פסו או THB" aria-label="חיפוש מטבע"><div class="grid" id="mres"></div></div>
-    <h2>שערי המועדפים</h2><div class="card"><p class="note" id="rnote">${rnote()}</p><div class="rates" id="mrates"></div><button class="btn" id="reset">החזר לשערים המקוריים</button></div>`;
+    <h2>שערי המועדפים</h2><div class="card"><p class="note" id="rnote">${rnote()}</p><p class="note"><a href="https://www.exchangerate-api.com" style="color:inherit">Rates By Exchange Rate API</a></p><div class="rates" id="mrates"></div><button class="btn" id="reset">החזר לשערים המקוריים</button></div>`;
     const draw=()=>{const f=MF();
       $('mfav').innerHTML=f.length?f.map(k=>`<span class="fchip">${MN[k]}<button class="x" data-rm="${k}" aria-label="הסר">✕</button></span>`).join(''):'<p class="note">אין עדיין מועדפים.</p>';
       $('mrates').innerHTML=f.map(k=>`<label>1 ${fl(MC[k][2])} ${k} ${esc(MC[k][1])} =<span><input data-r="${k}" inputmode="decimal" dir="ltr" value="${+R[k].toPrecision(4)}"> ₪</span></label>`).join('')};
